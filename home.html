@@ -1,52 +1,19 @@
-<!DOCTYPE html> 
-<html lang="es"> <!-- idioma español -->
+<!DOCTYPE html>
+<html lang="en">
 
-<head> <!-- encabezado principal -->
-    <meta charset="UTF-8"> <!-- permite ñ, tildes -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsive -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/style.css"> <!-- unimos a CSS -->
-    <title>Food Store</title> <!-- nombre de la pestaña -->
-</head> 
+    <title>Document</title>
+</head>
 
 <body>
-    <header>
-        <h1 class="logo">Food Store</h1> <!-- titulo con h1 -->
-        <nav> <!-- menu de navegacion -->
-            <ul> <!-- lista desordenada con enlaces <a> -->
-                <li><a href="inicio.html">Inicio</a></li>
-                <li><a href="mispedidos.html">Mis Pedidos</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
-                <li><a href="/src/pages/admin/home/home.html">Panel Admin</a> </li>
-            </ul>         
-        </nav>
-    </header> <!-- hasta aca no se modifico -->
-    <hr>
+    <h1>Hola desde la vista de admin</h1>
     <button id="logoutButton">Logout</button>
-    <main><!-- contenido principal -->
-        <aside>
-	    <section>
-                <h2>Categorias</h2>
-                <ul id="lista-categorias"><!-- dejamos contenedor vacio con id --> 
-				  <!-- aca vamos a meter contenido con JavaScript -->
-				<!-- se usa ul porque es una lista simple -->        
-                </ul> 
-	    </section>
-        </aside> 
-        <section>   
-        <h2>Productos Destacados</h2>
-	<div id="contenedor-productos"></div> <!-- dejamos contenedor vacio con id -->
-				            <!-- aca vamos a generar los productos dinamicamente -->
-  				           <!-- se una section porque vamos a agrupar contenido -->
-	</section>
-    </main>
-    <hr>
-    <footer>
-        <p>&copy; 2024 Food Store. Todos los derechos reservados <br>
-        Contacto: <a href="mailto:info@foodstore.com">info@foodstore.com</a>
-    </p>
-    </footer>
     <script type="module" src="/src/main.ts"></script>
     <script type="module" src="./home.ts"></script>
 </body>
+
 
 </html>
