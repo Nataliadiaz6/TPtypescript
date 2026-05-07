@@ -1,39 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/style.css"> <!-- unimos a CSS -->
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>Registro</h1>
-
-    <!-- Formulario que usa tu registro.ts -->
-    <form id="registroForm">
-        
-        <!-- Input email -->
-        <input 
-            type="email" 
-            name="email" 
-            placeholder="Email" 
-        />
-
-        <!-- Input password -->
-        <input 
-            type="password" 
-            name="password" 
-            placeholder="Contraseña" 
-        />
-
-        <!-- Botón enviar -->
-        <button type="submit">Registrarse</button>
-
-    </form>
-    <script type="module" src="/src/main.ts"></script>
-    <script type="module" src="./registro.ts"></script>
-</body>
-</html>
-
+// la seguridad la deja,os solamente el el main.ts
+// funcion para cerrar sesion
+export function logout() {
+// borramos usuario loguado
+  localStorage.removeItem("userData");
+//redirigimos al login
+  window.location.href = "/src/pages/auth/login/login.html";
+}
