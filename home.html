@@ -1,33 +1,19 @@
-import type { IUser } from "./types/IUser";
-import { Rol } from "./types/rol"
+<!DOCTYPE html>
+<html lang="en">
 
-//protegemos rutas del sistema
-function checkAuth() {
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/style.css"> <!-- unimos a CSS -->
+    <title>Document</title>
+</head>
 
-//obtenemos usuario logueado si exixte
-  const user: IUser | null = JSON.parse(localStorage.getItem("userData") || "null");
+<body>
+    <h1>Hola desde la vista de admin</h1>
+    <button id="logoutButton">Logout</button>
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./home.ts"></script>
+</body>
 
-//obtenemos ruta actual
-  const path = window.location.pathname;
 
-  //Si no hay usuario y no esta en login y registro lo mandamos al login
-  if (!user && !path.includes("login") && !path.includes("registro")) {
-    window.location.href = "/src/pages/auth/login/login.html";
-    return;
-  }
-
-//si hay usuario logueado
-  if (user) {
-    // Cliente intentando entrar a admin
-    if (path.includes("/admin") && user.rol !== Rol.ADMIN) {
-      window.location.href = "/src/pages/client/home/home.html";
-    }
-
-    // Admin entrando a client
-    if (path.includes("/client") && user.rol !== Rol.CLIENT) {
-      window.location.href = "/src/pages/admin/home/home.html";
-    }
-  }
-}
-// proteccion en todas las paginas
-checkAuth();
+</html>
